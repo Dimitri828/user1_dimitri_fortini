@@ -1,0 +1,44 @@
+:root{
+    /* --gr: rgb(64, 201, 85); */
+    --gr: rgb(73, 195, 86);
+    --bl:rgb(13, 110, 253) ;
+    --wh:rgb(245, 247, 248);
+    --blk:rgb(45, 45, 45);
+
+}
+body{
+    background-color: var(--wh)
+}
+*{
+    
+  font-family: "Cantata One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+/* Navabar */
+
+.navbar{
+    height: 80px;
+    background-color: var(--gr);
+}
+
+.logo{
+    height: 80px;
+}
+
+@media (max-width: 850px) {
+  a.navbar-brand,.navbar {
+    padding: 0;
+  }
+}
+
+/* Register */
+.form-box{
+    border: 2px solid var(--gr);
+    border-radius: 30px;
+    padding: 40px 20px
+    
+}
