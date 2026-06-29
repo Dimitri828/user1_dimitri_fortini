@@ -8,4 +8,6 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 } */
 @import "bootstrap";
+@import "swiper/css/bundle";
 @import "style";
+

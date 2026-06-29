@@ -18,7 +18,7 @@
                     </li>
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tutti gli Annunci</a>
+                    <a class="nav-link" href="{{route("article.index")}}">Tutti gli Annunci</a>
                 </li>
             </ul>
             @guest
