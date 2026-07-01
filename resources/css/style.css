@@ -1,24 +1,40 @@
 :root{
     /* --gr: rgb(64, 201, 85); */
-    --gr: rgb(73, 195, 86);
+    /* --gr: rgb(73, 195, 86); */
+    --gr:rgb(41, 48, 56);
     --bl:rgb(13, 110, 253) ;
-    --wh:rgb(245, 247, 248);
+    --wh:rgb(227, 230, 230);
     --blk:rgb(45, 45, 45);
-
+    --green:rgb(92, 125, 100);
+    /* --blk:rgb(0,0,0); */
 }
 body{
-    background-color: var(--wh)
+    background-color: var(--wh);
+    margin:0px;
 }
 *{
-    color: var(--blk); 
+    color: var(--blk);  
   font-family: "Cantata One", serif;
   font-weight: 400;
   font-style: normal;
 }
 
+.font-blk{
+  color: var(--blk);
+}
 
+.font-wh{
+  color: var(--wh);
+}
 
+.btn-custom{
+  background-color: var(--green);
+  color: white;
+}
 
+.btn-custom:hover{
+  background-color: var(--green);
+}
 /* Header */
 header{
     height:90vh;
@@ -32,12 +48,27 @@ header{
 /* Navabar */
 
 .navbar{
-    height: 80px;
+    height: 60px;
     background-color: var(--gr);
 }
 
+
+
 .logo{
-    height: 80px;
+    height: 60px;
+}
+
+
+
+.navbar a:hover{
+  color: var(--green);
+}
+
+/* UnderNavbar */
+
+.under-navbar{
+  background-color: rgb(92, 125, 100);
+  height: 35px;
 }
 
 
@@ -50,57 +81,63 @@ header{
 }
 
 /* Swiper home*/
-
-
-body {
-  position: relative;
+.swiper {
+  width: 100%;
   height: 100%;
 }
 
-body {
-  
-  background: var(--wh);
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-.swiper {
-  border: 2px solid var(--gr);  
-  border-radius: 30px;
-  width: 80%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  
-  
-}
-
 .swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 550px;
-  margin-right: 50px;
+  text-align: center;
+  font-size: 18px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
+  height:100%;
   object-fit: cover;
 }
+
+
+ 
+
+    
+        
+
+
 
 /* CARD */
 .badge{
   text-decoration: none;
+  background-color: var(--green);
 }
 
+/* FOOTER */
 
+footer,footer li,footer h5{
+  background-color: var(--gr);
+  color: var(--wh);
+}
+.footer-logo{
+  height: 100px;
+}
 
+.anchor-footer{
+  text-decoration: none;
+  color: var(--wh);
+}
 @media (max-width: 850px) {
   a.navbar-brand,.navbar {
     padding: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .under-navbar {
+    height: 55px;
   }
 }

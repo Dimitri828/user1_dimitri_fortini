@@ -61,13 +61,16 @@
                     @endforeach
                 </div>
                 <div class="text-danger">
-                        @error('category_id')
-                            {{ $message }}
-                        @enderror
-                    </div>
-                <button type="submit" class="btn btn-primary">Inserisci</button>
+                    @error('category_id')
+                        {{ $message }}
+                    @enderror
+                </div>
+                <div class="d-flex justify-content-center mt-5">
+                    <button type="submit" class="btn btn-custom ">Inserisci</button>
+                </div>
             </form>
 
         </div>
     </div>
 </section>
+

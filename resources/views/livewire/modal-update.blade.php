@@ -1,6 +1,6 @@
 <div>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Modifica Annuncio
     </button>
 
@@ -74,7 +74,7 @@
                             @enderror
                         </div>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                        <button type="submit" class="btn btn-primary">Modifica</button>
+                        <button type="submit" class="btn btn-custom">Modifica</button>
                     </form>
 
                 </div>

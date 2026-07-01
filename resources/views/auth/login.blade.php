@@ -20,16 +20,19 @@
                     @error('password')
                         <div class="text-danger mb-3">{{ $message }}</div>
                     @enderror
-                    <button class="btn btn-primary mb3" type="submit">Login</button>
+                    <div class="d-flex justify-content-center mt-5">
+                        <button class="btn btn-custom mb3" type="submit">Login</button>
+                    </div>
                     <div class="mt-3">
                         <p class="d-inline ">Non sei ancora registrato?</p>
                         <a href="{{ route('register') }}">Registrati!</a>
                     </div>
                 </form>
             </div>
-
-
-
         </div>
     </div>
 </x-layout>
+
+
+
+

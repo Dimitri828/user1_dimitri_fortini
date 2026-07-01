@@ -1,5 +1,5 @@
 <x-layout>
-    <header></header>
+    <header ></header>
 
 
     <h2 class="text-center my-3 text-dark">Angolo delle Occasioni</h2>

@@ -28,9 +28,10 @@ class ArticleController extends Controller
         return view("article.show", compact("article"));
     }
 
-    public function filteredByCategory(Category $category){
-        $articles=Article::where("category_id",$category->id)->get();
+    public function filteredByCategory(Category $category)
+    {
+        $articles = Article::where("category_id", $category->id)->get();
 
-        return view("article.category", compact("articles","category"));
+        return view("article.category", compact("articles", "category"));
     }
 }

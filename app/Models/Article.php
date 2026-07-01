@@ -18,6 +18,9 @@ class Article extends Model
         "description",
         "category_id",
         "user_id",
+        "review_status",
+        "reviewed_by",
+
     ];
 
      public function category(): BelongsTo

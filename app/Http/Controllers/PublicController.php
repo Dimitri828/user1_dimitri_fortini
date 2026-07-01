@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 class PublicController extends Controller
 {
-    public function home(){
-      $articles=Article::all();  
-        return view("welcome",compact("articles"));
-    }
+  public function home()
+  {
+    $articles = Article::all();
+    return view("welcome", compact("articles"));
+  }
 }
