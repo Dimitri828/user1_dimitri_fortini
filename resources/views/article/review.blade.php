@@ -13,6 +13,11 @@
                     @csrf
                     <button type="submit" class="btn btn-danger">Rifiuta</button>
                 </form>
+                 <form action="{{ route('review.undo', compact('article')) }}" method="POST">
+                    @method('PUT')
+                    @csrf
+                    <button type="submit" class="btn btn-secondary">Annulla ultima modifica</button>
+                </form>
             </div>
         </div>
     </section>

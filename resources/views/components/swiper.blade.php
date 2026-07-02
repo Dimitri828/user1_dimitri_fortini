@@ -1,4 +1,4 @@
-<div class="swiper mySwiper my-5">
+<div class="swiper mySwiper my-5 form-box">
     <div class="swiper-wrapper ">
 
         @foreach ($articles->take(6) as $article)

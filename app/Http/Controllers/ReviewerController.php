@@ -30,5 +30,26 @@ class ReviewerController extends Controller
         ]);
         return redirect()->route("article.review");
     }
+
+    public function undo(){
+        $article= Article::where("reviewed_by", auth()->id())
+        ->latest("updated_at")
+        ->first();
+
+        if (!$article) {
+            return redirect()->back()->with("message", "Nessuna operazione da annullare.");
+        }
+
+        $article->update([
+            "review_status"=>"pending",
+            "reviewed_by"=>null,
+        ]);
+
+        return redirect()->route("article.review")->with("message","Ultima operazione annullata.");
+    }
+
+    public function joinUs(){
+        return view("join-us");
+    }
      
 }

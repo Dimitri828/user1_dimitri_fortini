@@ -25,6 +25,7 @@ body{
 
 .font-wh{
   color: var(--wh);
+  
 }
 
 .btn-custom{
@@ -71,6 +72,10 @@ header{
   height: 35px;
 }
 
+.under-navbar a:hover{
+  color: var(--blk);
+}
+
 
 /* Register */
 .form-box{
@@ -82,7 +87,7 @@ header{
 
 /* Swiper home*/
 .swiper {
-  width: 100%;
+  width: 95%;
   height: 100%;
 }
 
