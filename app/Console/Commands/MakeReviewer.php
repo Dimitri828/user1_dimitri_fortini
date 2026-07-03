@@ -27,3 +27,5 @@ class MakeReviewer extends Command
         $this->info("L'utente è stato reso Revisore.");
     }
 }
+
+
