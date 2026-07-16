@@ -18,7 +18,7 @@ Route::get("/articles/show/{article}", [ArticleController::class, ("show")])->na
 // Filterd By Category
 Route::get("/articles/category/{category}", [ArticleController::class, ("filteredByCategory")])->name("article.category");
 // Review  TODO rendere raggiungibile solo dai reviewer
-Route::get("/articles/review",[ReviewerController::class,("review")])->name("article.review");
+Route::get("/articles/review",[ReviewerController::class,("review")])->name("article.review")->middleware(["auth","reviewer"]);
 
 // Review-buttons
 Route::put("/articles/review/accept/{article}",[ReviewerController::class,("accept")])->name("review.accept");
@@ -28,4 +28,6 @@ Route::put("/articles/review/undo/{article}",[ReviewerController::class,("undo")
 // Work with us
 Route::get("/join-us" ,[ReviewerController::class,("joinUs")])->name("joinUs")->middleware("auth");
 
+// Make Reviewer
 
+Route::get("/make/reviewer/{reviewer}", [ReviewerController::class,("makeReviewer")])->name("make.reviewer");

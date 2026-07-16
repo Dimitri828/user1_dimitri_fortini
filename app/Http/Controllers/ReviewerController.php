@@ -1,55 +1,70 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Article;
+use App\Models\Reviewer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
+use App\Models\User;
 
 class ReviewerController extends Controller
 {
-    public function review(){
-        $article=Article::where("review_status","pending")->oldest()->first();
+    public function review()
+    {
+        $article = Article::where("review_status", "pending")->oldest()->first();
         if (!$article) {
-            return redirect()->route("home")->with("message","Non ci sono articoli da revisionare");
+            return redirect()->route("home")->with("message", "Non ci sono articoli da revisionare");
         }
-        return view("article.review",compact("article"));
+        return view("article.review", compact("article"));
     }
 
-    public function accept(Article $article){
+    public function accept(Article $article)
+    {
         $article->update([
-            "review_status"=> "accepted",
-            "reviewed_by"=> auth()->id(),
+            "review_status" => "accepted",
+            "reviewed_by" => auth()->id(),
         ]);
         return redirect()->route("article.review");
     }
 
-    public function reject(Article $article){
+    public function reject(Article $article)
+    {
         $article->update([
-            "review_status"=> "rejected",
-            "reviewed_by"=> auth()->id(),
+            "review_status" => "rejected",
+            "reviewed_by" => auth()->id(),
         ]);
         return redirect()->route("article.review");
     }
 
-    public function undo(){
-        $article= Article::where("reviewed_by", auth()->id())
-        ->latest("updated_at")
-        ->first();
+    public function undo()
+    {
+        $article = Article::where("reviewed_by", auth()->id())
+            ->latest("updated_at")
+            ->first();
 
         if (!$article) {
             return redirect()->back()->with("message", "Nessuna operazione da annullare.");
         }
 
         $article->update([
-            "review_status"=>"pending",
-            "reviewed_by"=>null,
+            "review_status" => "pending",
+            "reviewed_by" => null,
         ]);
 
-        return redirect()->route("article.review")->with("message","Ultima operazione annullata.");
+        return redirect()->route("article.review")->with("message", "Ultima operazione annullata.");
     }
 
-    public function joinUs(){
+    public function joinUs()
+    {
         return view("join-us");
     }
-     
+
+    public function makeReviewer(Reviewer $reviewer)
+    {
+        Artisan::call("app:make-reviewer", ["email" => $reviewer->email]);
+
+        return redirect()->route("home")->with("message", "L'utente è stato reso revisore.");
+    }
 }

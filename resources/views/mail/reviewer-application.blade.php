@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,26 +13,27 @@
     }
 
     main {
-        border: 2px solid rgb(41,48,56);
+        border: 2px solid rgb(41, 48, 56);
         border-radius: 30px;
         padding: 40px 20px
     }
-    h1{
+
+    h1 {
         text-align: center;
-        font-size:100px;
-        
+        font-size: 100px;
+
     }
-    .bg-green{
+
+    .bg-green {
         width: 100%;
-        background-color: rgb(92,125,100);
+        background-color: rgb(92, 125, 100);
     }
-   
 </style>
 
 <body>
 
     <main>
-        
+
         <h1 class="bg-green">Presto.it</h1>
         <h2>Grazie per averci contattato</h2>
 
@@ -44,20 +44,19 @@
 
         <p>
             Queste sono le informazioni che ci hai fornito:
-            
+
         </p>
 
         <ul>
-            <li>Email:{{$reviewer->email}}</li>
-            <li>Conoscenza della lingua inglese:{{$reviewer->english_level}}</li>
-            <li>Esperienza:{{$reviewer->experience}}</li>
+            <li>Email:{{ $reviewer->email }}</li>
+            <li>Conoscenza della lingua inglese:{{ $reviewer->english_level }}</li>
+            <li>Esperienza:{{ $reviewer->experience }}</li>
         </ul>
 
         <p>
-            Il nostro team esaminerà attentamente il tuo profilo. Se la tua candidatura risulterà in linea con le nostre
-            esigenze,
-            ti contatteremo all'indirizzo email che hai fornito.
+            Clicca il seguente link per entrare subito a far parte del nostro team:
         </p>
+        <a href="{{ route('make.reviewer', compact('reviewer')) }}">Diventa Revisore</a>
 
         <p>
             Ti ringraziamo per l'interesse dimostrato e ti auguriamo una buona giornata.
@@ -66,7 +65,7 @@
         <hr>
 
         <p class="bg-green">
-            <strong >Il Team di Presto.it</strong>
+            <strong>Il Team di Presto.it</strong>
         </p>
 
     </main>

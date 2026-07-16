@@ -18,7 +18,7 @@ class FormJoinUs extends Component
     #[Validate("required", message: "Il campo è obbligatorio.")]
     public $english_level = "A1";
     #[Validate("required", message: "Il campo è obbligatorio.")]
-    public $experience ="none";
+    public $experience = "none";
 
 
 
@@ -31,13 +31,13 @@ class FormJoinUs extends Component
     {
         $this->validate();
 
-        $reviewer=Reviewer::create([
+        $reviewer = Reviewer::create([
             "email" => $this->email,
             "english_level" => $this->english_level,
             "experience" => $this->experience,
         ]);
-        
+
         Mail::to($this->email)->send(new ReviewerApplicationMail($reviewer));
-        session()->flash("message","Candidatura inviata correttamente, sarai contattato all'email fornita.");
+        session()->flash("message", "Candidatura inviata correttamente, sarai contattato all'email fornita.");
     }
 }
